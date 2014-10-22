@@ -30,3 +30,6 @@
 # may get better load performance if you require the specific files that are being used in the spec that tests them.
 #= require application
 #= require angular-mocks/angular-mocks
+beforeEach ->
+  this.addMatchers
+    toEqualData: (expected)-> return angular.equals(this.actual, expected)
