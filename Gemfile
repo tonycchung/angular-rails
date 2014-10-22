@@ -41,6 +41,8 @@ gem 'spring',        group: :development
  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'sass', '3.2.19'
 gem 'bower-rails'
+gem 'angular-rails-templates'
+
 gem 'foreman'
 
 group :production, :staging do
