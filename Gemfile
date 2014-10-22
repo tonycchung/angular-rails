@@ -41,19 +41,19 @@ gem 'spring',        group: :development
  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'sass', '3.2.19'
 gem 'bower-rails'
-gem "foreman"
+gem 'foreman'
 
 group :production, :staging do
-  gem "rails_12factor"
-  gem "rails_stdout_logging"
-  gem "rails_serve_static_assets"
+  gem 'rails_12factor'
+  gem 'rails_stdout_logging'
+  gem 'rails_serve_static_assets'
 end
 
 group :test, :development do
-  gem "rspec"
-  gem "rspec-rails", "~> 2.0"
-  gem "factory_girl_rails", "~> 4.0"
-  gem "capybara"
-  gem "database_cleaner"
-  gem "selenium-webdriver"
+  gem 'rspec'
+  gem 'rspec-rails', '~> 2.0'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
