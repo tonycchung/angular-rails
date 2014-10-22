@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use postgresql as the database for Active Record
@@ -40,6 +41,13 @@ gem 'spring',        group: :development
  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'sass', '3.2.19'
 gem 'bower-rails'
+gem "foreman"
+
+group :production, :staging do
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
+end
 
 group :test, :development do
   gem "rspec"
