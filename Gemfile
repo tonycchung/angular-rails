@@ -39,6 +39,7 @@ gem 'spring',        group: :development
 
  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'sass', '3.2.19'
+gem 'bower-rails'
 
 group :test, :development do
   gem "rspec"
