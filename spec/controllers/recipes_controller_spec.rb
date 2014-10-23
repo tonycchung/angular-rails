@@ -46,7 +46,7 @@ describe RecipesController do
 
   describe 'show' do
     before do
-      shr :get, :show, format: :json, id: recipe_id
+      xhr :get, :show, format: :json, id: recipe_id
     end
 
     subject(:results) { JSON.parse(response.body) }
@@ -68,5 +68,5 @@ describe RecipesController do
       let(:recipe_id) { -9999 }
       it { expect(response.status).to eq(404) }
     end
-    endg
+  end
 end
