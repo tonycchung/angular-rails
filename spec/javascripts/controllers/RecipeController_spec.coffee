@@ -18,6 +18,14 @@ describe "RecipeController", ->
       routeParams = $routeParams
       routeParams.recipeId = recipeId
 
+      request = new RegExp("\/recipes/#{recipeId}")
+      results = if recipeExists
+        [200,fakeRecipe]
+      else
+        [404]
+
+      httpBackend.expectGET(request).respond(results[0],results[1])
+
       ctrl        = $controller('RecipeController',
                                 $scope: scope)
     )
@@ -27,3 +35,17 @@ describe "RecipeController", ->
   afterEach ->
     httpBackend.verifyNoOutstandingExpectation()
     httpBackend.verifyNoOutstandingRequest()
+
+  describe 'controller initialization', ->
+    describe 'recipe is found', ->
+      beforeEach(setupController())
+      it 'loads the given recipe', ->
+        httpBackend.flush()
+        expect(scope.recipe).toEqualData(fakeRecipe)
+
+    describe 'recipe is not found', ->
+      beforeEach(setupController(false))
+      it 'loads the given recipe', ->
+        httpBackend.flush()
+        expect(scope.recipe).toBe(null)
+        # what else?!
